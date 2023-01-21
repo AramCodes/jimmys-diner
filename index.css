@@ -1,0 +1,124 @@
+body {
+    width: 600px;
+    margin: 0 auto;
+    font-family: 'Smythe';
+    font-weight: 400;
+    font-size: 1.15rem;
+    position: relative;
+}
+
+#container {
+    width:606;
+    height: 1100px;
+    border: 3px solid black;
+    border-radius:10px;
+}
+
+header {
+    height: 150px;
+    background-image: url("./images/burger.png");
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 46px;
+}
+
+.header-text {
+    margin: 0;
+}
+
+#menu {
+
+}
+
+.item-details {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid #d3d3d3;
+}
+
+.order-pic {
+    width: 50px;
+    margin-left: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+}
+
+.order-details {
+
+}
+
+.food-title {
+    font-size: 1rem;
+    margin: 20px 5px 5px 0;
+}
+
+.food-ingredient {
+    font-size: .75rem;
+    margin: 10px 5px 5px 0;
+    color: #d3d3d3;
+}
+
+.food-price {
+    margin: 10px 5px 5px 0;
+    font-weight: bold;
+}
+
+.add-to-cart-btn {
+    padding:10px 15px;
+    border-radius:50%;
+    margin: 40px 20px 0 20px;
+    border: 2px solid #d3d3d3;
+}
+
+.add-btn-container {
+
+}
+
+#order-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    text-align: center;
+}
+
+#order-header {
+    text-align: center;
+}
+
+#order-section {
+    width: 530px;
+    margin: 0 35px;
+    border-bottom: 2px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.order-btn {
+    
+    width:500;
+    background-color:#16DB99;
+    font-size:1.5rem;
+    font-weight: bold;
+    color: white;
+    border:none;
+    padding:15px 30px;
+    margin: 50px auto;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+#food {
+    font-weight: bold;
+}
+
+#price{
+    font-weight: bold;
+}
