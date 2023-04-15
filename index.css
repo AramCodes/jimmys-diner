@@ -1,15 +1,15 @@
 body {
-    width: 600px;
-    margin: 0 auto;
+    width: 100vw;
     font-family: 'Smythe';
     font-weight: 400;
-    font-size: 1.15rem;
+    font-size: 1.25rem;
     position: relative;
 }
 
 #container {
-    width:606;
-    height: 1100px;
+    margin: 0 auto;
+    width:600px;
+    height: 1200px;
     border: 3px solid black;
     border-radius:10px;
 }
@@ -28,10 +28,6 @@ header {
     margin: 0;
 }
 
-#menu {
-
-}
-
 .item-details {
     display: flex;
     justify-content: space-between;
@@ -46,17 +42,14 @@ header {
     
 }
 
-.order-details {
-
-}
-
 .food-title {
-    font-size: 1rem;
+    font-size: 1.25rem;
     margin: 20px 5px 5px 0;
 }
 
 .food-ingredient {
-    font-size: .75rem;
+    font-size: 1rem;
+    width: 150px;
     margin: 10px 5px 5px 0;
     color: #d3d3d3;
 }
@@ -66,19 +59,82 @@ header {
     font-weight: bold;
 }
 
-.add-to-cart-btn {
+.add-btn {
     padding:10px 15px;
     border-radius:50%;
     margin: 40px 20px 0 20px;
     border: 2px solid #d3d3d3;
+    cursor: pointer;
 }
-
-.add-btn-container {
-
-}
-
-#order-container {
+/*Payment Modal*/
+.popup{
+    margin: 0 auto;
+    width: 400px;
+    background-color: #fff;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 6px;
+    text-align: center;
+    z-index: 10;
+    transform: translate(-50%,50%) scale(0);
+    transition: 200ms ease-in-out, top 0.4s;
+    position: absolute;
+    top: 0;
+    left: 50%;
+}
+
+.open-popup {
+    top: 30%;
+    transform: translate(-50%,50%) scale(1);
+}
+
+.popup h3{
+    margin: 15px;
+    font-size: 1.75rem;
+    font-family: sans-serif;
+}
+
+.popup input {
+    border: 2px solid lightgray;
+    box-sizing: border-box;
+    margin: 10px auto;
+    width: 350px;
+    padding: 20px 30px;
+}
+
+.btn{
+    width:350px;
+    background-color:#16DB99;
+    font-size:1.5rem;
+    font-weight: bold;
+    color: white;
+    border:none;
+    padding:15px 30px;
+    margin: 10px auto; 
+    cursor: pointer;
+}
+/*to be active when modal is open*/
+#overlay {
+    position: fixed;
+    opacity: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+    pointer-events: none;
+    transition: 200ms ease-in-out;
+}
+
+#overlay.active{
+    pointer-events: all;
+    opacity: 1;
+}
+
+/*order container hidden until cart has 1 item*/
+#order-container {
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-self: center;
@@ -99,9 +155,8 @@ header {
     
 }
 
-.order-btn {
-    
-    width:500;
+.order-btn { 
+    width:500px;
     background-color:#16DB99;
     font-size:1.5rem;
     font-weight: bold;
@@ -109,10 +164,7 @@ header {
     border:none;
     padding:15px 30px;
     margin: 50px auto;
-}
-
-.hidden {
-    opacity: 0;
+    cursor: pointer;
 }
 
 #food {
@@ -122,3 +174,8 @@ header {
 #price{
     font-weight: bold;
 }
+
+#item{
+    font-weight: bold;
+}
+

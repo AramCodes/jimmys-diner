@@ -1,8 +1,9 @@
+<!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" 
-       integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" 
-       crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Smythe&display=swap" rel="stylesheet">
 
        <link rel="stylesheet" href="index.css">
        <title>Solo Jimmy's Diner</title>
@@ -17,16 +18,27 @@
             <main id="menu">
             
             </main>
+
+            <!--Payment Modal-->
+            <div class="popup" id="popup">
+                <h3>Enter card details</h3>
+                <input type="text" placeholder="Enter your name" required>
+                <input type="text" placeholder="Enter your card number" min="15" max="16" required>
+                <input type="text" placeholder="Enter your card's cvv" min="3" max="4" required>
+                <button type="submit" class="btn" id="close">Pay</button>
+            </div>
+            <!--Overlay to darken background when modal pops up-->
+            <div id="overlay"></div>
             <!--Order Section-->
-    <div id="order-container" class="hidden">   
-        <h3 id="order-header">Your order</h3>
-        <div id="order-section">
+            <div id="order-container">   
+                <h3 id="order-header">Your order</h3>
+            <div id="order-section">
+
             
-            <span id="food">Pizza</span>
-            <span id="price">$</span>
-        </div>   
-        <button class="order-btn">Complete Order</button> 
-    </div> 
+            </div>   
+            <button class="order-btn" id="open">Complete Order</button> 
+        </div> 
+
 	    <script src="index.js"></script>
     </body>
 </html>
