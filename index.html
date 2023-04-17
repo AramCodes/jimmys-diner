@@ -22,10 +22,12 @@
             <!--Payment Modal-->
             <div class="popup" id="popup">
                 <h3>Enter card details</h3>
-                <input type="text" placeholder="Enter your name" required>
-                <input type="text" placeholder="Enter your card number" min="15" max="16" required>
-                <input type="text" placeholder="Enter your card's cvv" min="3" max="4" required>
-                <button type="submit" class="btn" id="close">Pay</button>
+                <form action="">
+                    <input type="text" placeholder="Enter your name" required id="name">
+                    <input type="text" placeholder="Enter your card number" min="15" max="16" required>
+                    <input type="text" placeholder="Enter your card's cvv" min="3" max="4" required>
+                    <button type="submit" class="btn" id="close">Pay</button>
+                </form>
             </div>
             <!--Overlay to darken background when modal pops up-->
             <div id="overlay"></div>
@@ -35,9 +37,26 @@
             <div id="order-section">
 
             
-            </div>   
-            <button class="order-btn" id="open">Complete Order</button> 
-        </div> 
+
+
+
+
+
+
+            </div>
+            <div>
+
+                <div class="order-total">
+                    <h3>Total Price:</h3>
+                    <p id="total"></p>
+                </div>
+
+                <button class="order-btn" id="open">Complete Order</button>
+            </div>
+
+                    
+            </div>
+        </div>
 
 	    <script src="index.js"></script>
     </body>

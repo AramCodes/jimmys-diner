@@ -9,7 +9,7 @@ body {
 #container {
     margin: 0 auto;
     width:600px;
-    height: 1200px;
+    height: 1250px;
     border: 3px solid black;
     border-radius:10px;
 }
@@ -62,8 +62,9 @@ header {
 .add-btn {
     padding:10px 15px;
     border-radius:50%;
-    margin: 40px 20px 0 20px;
+    margin: 40px 30px 0 30px;
     border: 2px solid #d3d3d3;
+    background-color: #fff;
     cursor: pointer;
 }
 /*Payment Modal*/
@@ -85,12 +86,12 @@ header {
 }
 
 .open-popup {
-    top: 30%;
+    top: 10%;
     transform: translate(-50%,50%) scale(1);
 }
 
 .popup h3{
-    margin: 15px;
+    margin: 25px auto;
     font-size: 1.75rem;
     font-family: sans-serif;
 }
@@ -113,6 +114,7 @@ header {
     padding:15px 30px;
     margin: 10px auto; 
     cursor: pointer;
+    margin-bottom: 50px;
 }
 /*to be active when modal is open*/
 #overlay {
@@ -134,10 +136,10 @@ header {
 
 /*order container hidden until cart has 1 item*/
 #order-container {
-    display: none;
-    flex-direction: column;
+    /*display: none;*/
+    /*flex-direction: column;*/
     justify-content: center;
-    align-self: center;
+    align-items: center;
     text-align: center;
 }
 
@@ -146,13 +148,26 @@ header {
 }
 
 #order-section {
-    width: 530px;
-    margin: 0 35px;
+    width: 550px;
+    margin: 1em;
     border-bottom: 2px solid black;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     
+}
+
+.order-total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 35px;
+}
+
+.order-total p {
+    color: black;
+    font-weight: bold;
 }
 
 .order-btn { 
@@ -171,11 +186,35 @@ header {
     font-weight: bold;
 }
 
-#price{
+#price {
     font-weight: bold;
 }
 
-#item{
+#item {
     font-weight: bold;
 }
+
+.remove-btn {
+    border: none;
+    color: #d2d2d2;
+    background-color: #ffff;
+    font-size: 0.6rem
+}
+
+.message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 550px;
+    height: 100px;
+    background-color: #d2f8d2;
+    color: #013220;
+    font-size: 1.75rem;
+    z-index: 3;
+    /*position: absolute;
+    top: 46%;
+    left: 39%;*/
+}
+
 

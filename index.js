@@ -55,6 +55,9 @@ document.addEventListener('click', function(e) {
     if (e.target.dataset.add) {
         addToCart(e.target.dataset.add)
     }
+    else if (e.target.dataset.remove){
+        removeItem(e.target.dataset.remove)
+    }
 
 })
 
@@ -66,6 +69,7 @@ function addToCart(id){
 
     cart.push(targetFoodObj)
     renderOrder()
+    calculateTotal()
 }
 //get other buttons to work
 const overlay = document.getElementById("overlay")
@@ -81,50 +85,74 @@ function openPopUp() {
     overlay.classList.add('active')
 }
 
-function closePopUp() {
+function closePopUp(e) {
+    //stops false payment info along with attributes on input tags
+    e.preventDefault()
     popUp.classList.remove("open-popup");
     overlay.classList.remove('active')
-}
 
-//console.log(cart)
+    //once modal is closed make message appear
+    const name = document.getElementById('name').value
+    orderContainer.innerHTML = `<div class="message">Thanks, ${name}! Your order is on the way!</div>` //fix form name into message
+}
 
 //makes order button and details appear when cart has one or more items 
 const orderContainer = document.getElementById('order-section')
 
-if (cart.length > 0) {
-    orderContainer.style.display = 'block'
-    
-}
-
 //renders order to oder-section
 function renderOrder() { 
-    cart.forEach(object => {
+    let htmlStr = ""
+
+    cart.forEach((object, index)=> {
      
      
-     let htmlStr = ""
+    
      
      htmlStr +=`
      
-     <span id="item">${oject.name}</span>
-     <span id="price">$${object.price}</span>
+    <div class="order-inner">
+        <div class="order-desc">
+            <h3>${object.name}</h3>
+            <button class="remove-btn" data-remove="${index}">REMOVE</button>
+        </div>
+            <p>$${object.price}</p>
+    </div>
+      `
      
-     `
-     
-     orderContainer.innerHTML = htmlStr;
-     
+     orderContainer.innerHTML = htmlStr; 
     })
+
+    if (cart.length > 0) {
+        orderContainer.style.display = 'block'
+        
+    }
+    else {
+        orderContainer.style.display = 'none'
+    }
      
+}
+
+//adds remove option  functionality to each item
+
+function removeItem(orderIndex) {
+    cart.splice(orderIndex, 1)
+    // Using splice to remove an order from the array
+    renderOrder()
+    calculateTotal()
 }
 
 
 
 
 
-
-
-/*total.reduce(price => {
-
-})*/
+//adds up bill
+function calculateTotal() {
+    let orderTotal = 0
+    cart.forEach((orderItem) => {
+        orderTotal += orderItem.price
+    })
+    document.getElementById("total").textContent = "$" + orderTotal
+}
 
 
 
