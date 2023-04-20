@@ -8,8 +8,8 @@ body {
 
 #container {
     margin: 0 auto;
-    width:600px;
-    height: 1250px;
+    max-width:600px;
+    min-height: 1250px;
     border: 3px solid black;
     border-radius:10px;
 }
@@ -39,7 +39,6 @@ header {
     margin-left: 50px;
     margin-top: 20px;
     margin-bottom: 20px;
-    
 }
 
 .food-title {
@@ -136,7 +135,7 @@ header {
 
 /*order container hidden until cart has 1 item*/
 #order-container {
-    /*display: none;*/
+    display: none;
     /*flex-direction: column;*/
     justify-content: center;
     align-items: center;
@@ -198,7 +197,8 @@ header {
     border: none;
     color: #d2d2d2;
     background-color: #ffff;
-    font-size: 0.6rem
+    font-size: 0.6rem;
+    cursor: pointer;
 }
 
 .message {
@@ -212,9 +212,17 @@ header {
     color: #013220;
     font-size: 1.75rem;
     z-index: 3;
-    /*position: absolute;
-    top: 46%;
-    left: 39%;*/
 }
 
 
+@media all and (max-width: 500px){
+    .order-pic {
+    display: none;
+    }
+    .order-btn { 
+        width:200px;
+    }
+    #order-section {
+        width: 400px;  
+    }
+}

@@ -86,18 +86,33 @@ function openPopUp() {
 }
 
 function closePopUp(e) {
+    //input field values
+    const name = document.getElementById('name').value
+    const cardNumber = document.getElementById('cardNumber').value
+    const cvv = document.getElementById('cvv').value
     //stops false payment info along with attributes on input tags
-    e.preventDefault()
+
+    if (name === "" || cardNumber === "" || cvv === "") {
+        alert("Ye shall not pass")
+    }
+    else {
+        e.preventDefault()
     popUp.classList.remove("open-popup");
     overlay.classList.remove('active')
 
     //once modal is closed make message appear
-    const name = document.getElementById('name').value
+    
     orderContainer.innerHTML = `<div class="message">Thanks, ${name}! Your order is on the way!</div>` //fix form name into message
+    }
+    
+
+
 }
 
 //makes order button and details appear when cart has one or more items 
-const orderContainer = document.getElementById('order-section')
+const orderContainer = document.getElementById('order-container')
+const orderSection = document.getElementById('order-section')
+
 
 //renders order to oder-section
 function renderOrder() { 
@@ -119,9 +134,9 @@ function renderOrder() {
     </div>
       `
      
-     orderContainer.innerHTML = htmlStr; 
+     orderSection.innerHTML = htmlStr; 
     })
-
+/////////////////////////////////////////////
     if (cart.length > 0) {
         orderContainer.style.display = 'block'
         
@@ -129,7 +144,7 @@ function renderOrder() {
     else {
         orderContainer.style.display = 'none'
     }
-     
+///////////////////////////////////////////////     
 }
 
 //adds remove option  functionality to each item
@@ -141,10 +156,6 @@ function removeItem(orderIndex) {
     calculateTotal()
 }
 
-
-
-
-
 //adds up bill
 function calculateTotal() {
     let orderTotal = 0
@@ -153,8 +164,6 @@ function calculateTotal() {
     })
     document.getElementById("total").textContent = "$" + orderTotal
 }
-
-
 
 
 //console.log(total)
